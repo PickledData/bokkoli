@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
 	"net"
@@ -20,21 +21,25 @@ type Message struct {
 }
 
 func main() {
-	go startServer() // Run the server in a goroutine
-	startClient()    // Run the client in the main routine
+	port := flag.String("port", "8081", "Port for the server to listen on")
+	flag.Parse()
+
+	go startServer(*port)
+	startClient() // main routine
 }
 
-// Start a server to listen for incoming messages
-func startServer() {
+func startServer(port string) {
 	fmt.Println("What port are you listening on?")
-	listener, err := net.Listen("tcp", ":8081") // Listen on port 8080
+	address := ":" + port
+	listener, err := net.Listen("tcp", address)
 	if err != nil {
 		fmt.Println("Error starting server:", err)
 		return
 	}
-	defer listener.Close()
 
 	fmt.Println("Server listening on port 8081")
+	defer listener.Close()
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
@@ -42,11 +47,10 @@ func startServer() {
 			continue
 		}
 		log.Println("Someone has connected with you")
-		go handleConnection(conn) // Handle each connection in a goroutine
+		go handleConnection(conn)
 	}
 }
 
-// Handle incoming connections and display received messages
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
 	reader := bufio.NewReader(conn)
@@ -69,13 +73,12 @@ func startClient() {
 		scanner.Scan()
 		address := scanner.Text()
 
-		// Validate that the address includes a colon
 		if !strings.Contains(address, ":") {
 			fmt.Println("Invalid address format. Please include both hostname and port (e.g., 127.0.0.1:8081).")
 			continue
 		}
 
-		conn, err := net.Dial("tcp", address) // Connect to the peer
+		conn, err := net.Dial("tcp", address)
 		if err != nil {
 			log.Printf("Error connecting to peer: %v", err)
 			fmt.Println("Failed to connect. Please try again.")
@@ -85,9 +88,8 @@ func startClient() {
 
 		fmt.Println("Connected! Type your messages (type 'exit' to quit):")
 		writer := bufio.NewWriter(conn)
-		go handleConnection(conn) // Handle incoming messages in a goroutine
+		go handleConnection(conn)
 
-		// Read user input and send messages
 		for scanner.Scan() {
 			text := scanner.Text()
 			_, err := writer.WriteString(text)
@@ -107,10 +109,10 @@ func startClient() {
 func sendMessage(conn net.Conn, text string) {
 	msg := Message{
 		Text:      text,
-		Sender:    "User1",    // Replace with actual sender ID
-		Receiver:  "User2",    // Replace with actual receiver ID
-		Type:      "chat",     // Message type (e.g., "chat")
-		Timestamp: time.Now(), // Timestamp of the message
+		Sender:    "User1", // Replace with args
+		Receiver:  "User2", // Replace with args
+		Type:      "chat",  // Message type (e.g., "chat")
+		Timestamp: time.Now(),
 	}
 
 	// Serialize the message to JSON
@@ -120,8 +122,7 @@ func sendMessage(conn net.Conn, text string) {
 		return
 	}
 
-	// Send the JSON message
-	_, err = conn.Write(append(jsonData, '\n')) // Append newline for easier parsing
+	_, err = conn.Write(append(jsonData, '\n')) // Append newline for easier parsing o.o
 	if err != nil {
 		log.Printf("Error sending message: %v", err)
 	}
