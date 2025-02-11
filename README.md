@@ -10,15 +10,14 @@ This lightweight chat application enables **real-time, direct peer-to-peer commu
 
 ## Built With
 
-- ![Go](./assets/Bokkoli-Golang-image.png)  
+- <img src="./assets/Golang-image.png" width="50" />
   **Go** for the backend and message handling.
-  
-- ![SQLite](./assets/Bokkoli-sqlite-image.png)  
-  **SQLite** for persistent local message storage.
-  
-- ![Bubbletea](https://avatars.githubusercontent.com/u/24752999?s=200&v=4)  
-  **Bubbletea** for the UI framework to create a clean terminal interface.
 
+- <img src="./assets/sqlite-image.jpg" width="50" />
+  **SQLite** for persistent local message storage.
+
+- <img src="./assets/bubbletea.png" width="50" />
+  **Bubbletea** for the UI framework to create a clean terminal interface.
 ---
 
 ## Wireframe
@@ -26,10 +25,10 @@ This lightweight chat application enables **real-time, direct peer-to-peer commu
 Here’s a look at the design architecture:
 
 **Internal Design:**  
-<img src="./assets/Bokkoli-internalDesign.drawio.png" width="300" />
+<img src="./assets/Bokkoli-internalDesign.drawio.png" width="400" />
 
 **Deployment Flow:**  
-<img src="./assets/Bokkoli-Deployment.drawio.png" width="300" />
+<img src="./assets/Bokkoli-Deployment.drawio.png" width="400" />
 
 ---
 
@@ -57,6 +56,54 @@ Here’s a look at the design architecture:
 
 ---
 
-## Installation 🔧
 
-To get started with **Bokkoli**, follow
+## Installation Guide 🔧
+
+You can easily install and run the **[Your App Name]** CLI app by downloading the appropriate pre-compiled executable from the [GitHub Releases page](https://github.com/yourusername/yourapp/releases).
+
+Follow the steps below to get started.
+
+### Step 1: Visit the GitHub Releases Page
+
+Go to the official release page of this app:  
+[GitHub Releases - Bokkoli](https://github.com/PickledData/bokkoli/releases)
+
+### Step 2: Download the Executable
+
+On the releases page, you will see a list of available versions and their associated executable files. Choose the version you want to install and download the appropriate executable for your operating system:
+
+- **For Windows**:  
+  Download `bokkoli_windows.exe`  
+  (Click on the file to download.)
+
+- **For macOS**:  
+  Download `bokkoli_mac`  
+  (Click on the file to download.)
+
+- **For Linux**:  
+  Download `bokkoli_linux`  
+  (Click on the file to download.)
+
+### Step 3: (For macOS/Linux Users) Set Execute Permissions
+
+If you're using **macOS** or **Linux**, you may need to grant the downloaded file execute permissions before running it.
+
+To do so, open a terminal and navigate to the folder where you downloaded the file. Then run the following command:
+
+```bash
+chmod +x bokkoli_mac  # For macOS
+chmod +x bokkoli_linux  # For Linux
+```
+### Step 4: Run the Application
+
+Now you can run the app from the terminal:
+
+    On Windows:
+    Simply double-click bokkoli_windows.exe to run the app.
+    Alternatively, you can open a command prompt and run:
+
+    ./bokkoli_windows.exe # For Windows
+    ./bokkoli_mac  # For macOS
+    ./bokkoli_linux  # For Linux
+
+
