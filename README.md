@@ -57,7 +57,7 @@ Here’s a look at the design architecture:
 
 ## Installation Guide 🔧
 
-You can easily install and run the **[Your App Name]** CLI app by downloading the appropriate pre-compiled executable from the [GitHub Releases page](https://github.com/yourusername/yourapp/releases).
+You can easily install and run the Bokkoli CLI app by downloading the appropriate pre-compiled executable from the [GitHub Releases page](https://github.com/yourusername/yourapp/releases).
 
 Follow the steps below to get started.
 
@@ -105,3 +105,5 @@ Now you can run the app from the terminal:
     ./bokkoli_linux  # For Linux
 
 
+## Special Thanks
+A big thank you to [Thomas](https://github.com/tbone-iii) for insights in problem-solving and improving the app's performance and functionality. :D 
