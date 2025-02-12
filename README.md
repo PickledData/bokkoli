@@ -1,7 +1,5 @@
 # Bokkoli: A Veggie-to-Veggie Messaging CLI App 🌱
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 Bokkoli is a peer-to-peer **TCP messaging CLI application** built with **Go**, the **Bubbletea** framework, and **SQLite** for message persistence. The name "Bokkoli" is a playful fusion of "broccoli" and "보끔" (boggeum), the Korean word for "mix," reflecting its nature as a blend of technologies.
 
 This lightweight chat application enables **real-time, direct peer-to-peer communication** through a clean, terminal-based interface. Users can easily connect and exchange messages using the TCP protocol, while **SQLite** ensures that conversation history is safely stored locally.
