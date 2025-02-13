@@ -272,7 +272,7 @@ func startListenerCmd(port string) tea.Cmd {
 	}
 
 	return func() tea.Msg {
-		return func() tea.Msg { return listener }
+		return listener
 	}
 }
 
