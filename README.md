@@ -57,7 +57,7 @@ Here’s a look at the design architecture:
 
 ## Installation Guide 🔧
 
-You can easily install and run the Bokkoli CLI app by downloading the appropriate pre-compiled executable from the [GitHub Releases page](https://github.com/yourusername/yourapp/releases).
+You can easily install and run the Bokkoli CLI app by downloading the appropriate pre-compiled executable from Github. 
 
 Follow the steps below to get started.
 
