@@ -1,6 +1,4 @@
 *.db
 *.log
 *.env
-/Users/so/Developer/Bokkoli/cmd/myapp/bokkoli-linux
-b/Users/so/Developer/Bokkoli/cmd/myapp/bokkoli-mac
-/Users/so/Developer/Bokkoli/cmd/myapp/bokkoli-windows.exe
+cmd/myapp/bokkoli-*
