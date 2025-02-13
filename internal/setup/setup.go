@@ -46,7 +46,9 @@ func New() *SetupModel {
 	form := huh.NewForm(
 		huh.NewGroup(
 			huh.NewInput().
-				Title(""), // bubbletea Huh bug, possibly remove this field if not needed
+				Title("").                                                        // bubbletea Huh bug, possibly remove this field if not needed
+				Placeholder("Below you will be entering the username and port."), // Fixed issue
+
 			huh.NewInput().
 				Key("username").
 				Title("Input username").
