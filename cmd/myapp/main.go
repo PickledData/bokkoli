@@ -68,7 +68,7 @@ func (m mainModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.setup = setup.New()
 			case chatView:
 				m.state = loginView
-				m.chat = message.New()
+
 			}
 			return m, nil
 		}
@@ -76,6 +76,7 @@ func (m mainModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if msg.String() == "enter" && m.state == loginView {
 			switch m.login.Cursor {
 			case 0:
+				m.chat = message.New()
 				m.state = chatView
 			case 1:
 				log.Println("Entered setup view state.")
